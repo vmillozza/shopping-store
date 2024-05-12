@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { CartComponent } from './pages/cart/cart.component';
 /*
 Questo codice definisce un array di oggetti di tipo Routes che viene esportato con il nome "routes". Ogni oggetto rappresenta una route dell'applicazione. Ecco una spiegazione dettagliata:
 
@@ -13,4 +14,5 @@ In sintesi, questo codice definisce due route principali per l'applicazione: una
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'cart', component: CartComponent },
 ];
