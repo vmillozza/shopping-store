@@ -1,0 +1,35 @@
+name: CI for Angular
+
+# Trigger del workflow su push e pull request al ramo principale
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout del codice
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Configurazione di Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Step 3: Installazione delle dipendenze
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Esecuzione dei test
+      - name: Run tests
+        run: npm test
+
+      # Step 5: Build del progetto
+      - name: Build project
+        run: npm run build -- --prod
